@@ -34,6 +34,7 @@ return {
 					end
 				end,
 			})
+			vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
 			vim.keymap.set('n', '<Leader>h', vim.lsp.buf.hover, {})
 			vim.keymap.set('n', '<Leader>d', vim.lsp.buf.definition, {})
 			vim.keymap.set('n', '<Leader>a', vim.lsp.buf.code_action, {})
@@ -65,23 +66,9 @@ return {
 				float = { border = "rounded" },
 			})
 			-- Show line diagnostics automatically in hover window
-			vim.o.updatetime = 500
-			vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+			vim.o.updatetime = 100
+			-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 		end
-	},
-	{ 'hrsh7th/cmp-nvim-lsp' },
-	{
-		'hrsh7th/nvim-cmp',
-		config = function()
-			local cmp = require('cmp')
-			cmp.setup({
-				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
-				}
-			})
-		end
-
 	},
 	{
 		"williamboman/mason.nvim",
