@@ -62,11 +62,11 @@ return {
 				virtual_text = false,
 				underline = true,
 				signs = true,
-				update_in_insert = false,
+				update_in_insert = true,
 				float = { border = "rounded" },
 			})
 			-- Show line diagnostics automatically in hover window
-			vim.o.updatetime = 100
+			vim.o.updatetime = 50
 			-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 		end
 	},
