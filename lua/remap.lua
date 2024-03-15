@@ -6,6 +6,7 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>ex', vim.cmd.Ex)
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
 vim.keymap.set('t', 'jk', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<Leader>s', ':w<CR>')
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
