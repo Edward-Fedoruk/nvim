@@ -1,31 +1,33 @@
-return 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		opts = {
-			transparent_background = true,
-			term_colors = true,
-			dim_inactive = {
-				enabled = false,
-				shade = "dark",
-				percentage = 0.15,
-			},
-			integrations = {
-				telescope = true,
-				mason = true,
-				treesitter = true,
-				cmp = true
-			},
+return {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	opts = {
+		transparent_background = true,
+		term_colors = true,
+		dim_inactive = {
+			enabled = false,
+			shade = "dark",
+			percentage = 0.15,
 		},
-		custom_highlights = function(colors)
-			return {
-				CmpBorder = { fg = colors.surface2 },
-			}
-		end,
-		config = function(_, opts)
-			require("catppuccin").setup(opts)
+		integrations = {
+			telescope = true,
+			gitsigns = true,
+			mason = true,
+			treesitter = true,
+			neotree = true,
+			cmp = true
+		},
+	},
+	custom_highlights = function(colors)
+		return {
+			CmpBorder = { fg = colors.surface2 },
+		}
+	end,
+	config = function(_, opts)
+		require("catppuccin").setup(opts)
 
-			-- setup must be called before loading
-			vim.cmd.colorscheme "catppuccin"
-		end,
-	}
+		-- setup must be called before loading
+		vim.cmd.colorscheme "catppuccin"
+	end,
+}

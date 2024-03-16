@@ -13,3 +13,5 @@ vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>ln', function()
 	vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { noremap = true, silent = true, desc = "Toggle Relative Numbers" })
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
