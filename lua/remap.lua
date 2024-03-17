@@ -15,3 +15,4 @@ vim.keymap.set('n', '<leader>ln', function()
 end, { noremap = true, silent = true, desc = "Toggle Relative Numbers" })
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
+vim.keymap.set('n', '<Leader>/', ':nohlsearch<CR>', {})
