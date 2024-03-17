@@ -10,13 +10,42 @@ return {
 			shade = "dark",
 			percentage = 0.15,
 		},
+		styles = {
+			comments = { "italic" },
+			properties = { "italic" },
+			functions = { "bold" },
+			keywords = { "italic" },
+			operators = { "bold" },
+			conditionals = { "bold" },
+			loops = { "bold" },
+			booleans = { "bold", "italic" },
+			numbers = {},
+			types = {},
+			strings = {},
+			variables = {},
+		},
 		integrations = {
 			telescope = true,
 			gitsigns = true,
 			mason = true,
 			treesitter = true,
 			neotree = true,
-			cmp = true
+			cmp = true,
+			native_lsp = {
+				enabled = true,
+				virtual_text = {
+					errors = { "italic" },
+					hints = { "italic" },
+					warnings = { "italic" },
+					information = { "italic" },
+				},
+				underlines = {
+					errors = { "underline" },
+					hints = { "underline" },
+					warnings = { "underline" },
+					information = { "underline" },
+				},
+			},
 		},
 	},
 	custom_highlights = function(colors)
