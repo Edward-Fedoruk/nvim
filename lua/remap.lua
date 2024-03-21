@@ -1,6 +1,9 @@
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set nowrap")
+vim.cmd("set clipboard=unnamed")
+
 vim.opt.scrolloff = 15
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>ex', vim.cmd.Ex)
@@ -16,3 +19,10 @@ end, { noremap = true, silent = true, desc = "Toggle Relative Numbers" })
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
 vim.keymap.set('n', '<Leader>/', ':nohlsearch<CR>', {})
+-- Move lines up
+vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
