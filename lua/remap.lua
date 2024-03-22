@@ -1,6 +1,7 @@
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
+vim.cmd("set expandtab")
 vim.cmd("set nowrap")
 vim.cmd("set clipboard=unnamed")
 
@@ -14,7 +15,7 @@ vim.keymap.set('t', 'jk', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<Leader>s', ':w<CR>')
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>ln', function()
-	vim.opt.relativenumber = not vim.opt.relativenumber:get()
+    vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, { noremap = true, silent = true, desc = "Toggle Relative Numbers" })
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
