@@ -27,23 +27,44 @@ return {
         },
     },
     config = function()
+        -- If you want icons for diagnostic errors, you'll need to define them somewhere:
         require('neo-tree').setup({
-            close_if_last_window = true,
+            close_if_last_window = false,
             enable_diagnostics = true,
-            git_status = {
-                symbols = {
-                    -- Change type
-                    added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-                    modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-                    deleted   = "✖", -- this can only be used in the git_status source
-                    renamed   = "󰁕", -- this can only be used in the git_status source
-                    -- Status type
-                    untracked = "",
-                    ignored   = "",
-                    unstaged  = "",
-                    staged    = "",
-                    conflict  = "",
-                }
+            default_component_configs = {
+                modified = {
+                    symbol = "M",
+                    highlight = "NeoTreeModified",
+                },
+                diagnostics = {
+                    symbols = {
+                        hint = "",
+                        info = "",
+                        warn = "",
+                        error = "",
+                    },
+                    highlights = {
+                        hint = "DiagnosticSignHint",
+                        info = "DiagnosticSignInfo",
+                        warn = "DiagnosticSignWarn",
+                        error = "DiagnosticSignError",
+                    },
+                },
+                git_status = {
+                    symbols = {
+                        -- Change type
+                        added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
+                        modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+                        deleted   = "✖", -- this can only be used in the git_status source
+                        renamed   = "", -- this can only be used in the git_status source
+                        -- Status type
+                        untracked = "",
+                        ignored   = "",
+                        unstaged  = "",
+                        staged    = "",
+                        conflict  = "",
+                    }
+                },
             },
             window = {
                 position = 'right'
