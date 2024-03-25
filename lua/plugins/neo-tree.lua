@@ -79,6 +79,12 @@ return {
                         '.DS_Store',
                     },
                 },
+                follow_current_file = {
+                    enabled = true,
+                    --               -- the current file is changed while the tree is open.
+                    leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+                },
+                use_libuv_file_watcher = true
             }
         })
         vim.keymap.set('n', '<Leader>n', ':Neotree filesystem toggle right<CR>', {})
